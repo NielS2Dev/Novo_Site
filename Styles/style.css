@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; }
+
+@font-face {
+    font-family: 'font-pixerl-art';
+    src: url("../Fonts/VCR_OSD_MONO_1.001.ttf") format('truetype'); }
+
+:root {
+    --pix-art: font-pixerl-art; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+header h1{
+    padding-top: 20px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1; /* Está na frente */
+
+    font-family: var(--pix-art);
+    font-size: 3em;
+    text-align: center;
+}
+
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+section div.background-section {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0; /* Está na atrás */
+}
+
+section div.background-section video {
+    /* Isso aqui serviu para basicamente tirar op absolute da parte do vídeo */
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+    /* Isso serve para o video tomar toda a janela */
+    object-position: center;
+}
+
+
+section div.box {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+section div.box img{
+    width: 30%;
+    min-width: 250px;
+}
+
+section div.box p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    width: 35%;
+    min-width: 290px;
+    font-weight: bolder;
+    text-align: justify;
+    text-indent: 10px;
+}
